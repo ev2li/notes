@@ -2,3 +2,7 @@ Redis HyperLogLog 是用来做基数统计的算法，HyperLogLog 的优点是�
 
 在 Redis 里面，每个 HyperLogLog 键只需要花费 12 KB 内存，就可以计算接近 2^64 个不同元素的基 数
 PFADD runoobkey "redis"
+
+ant design pro
+
+高并发的时候,使用连接池
