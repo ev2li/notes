@@ -21,3 +21,7 @@ engin.HANDLE("GET", "/hello", func(ctx *gin.Context){
         ctx.ShouldBind(&student)
     JSON:
         ctx.BindJSON(&student)
+
+返回HTML：
+    engine.LoadHTMLGlob("./html/*")
+    ctx.HTML(http.StatusOK, "./html/index.html", nil)
