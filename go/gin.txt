@@ -24,4 +24,8 @@ engin.HANDLE("GET", "/hello", func(ctx *gin.Context){
 
 返回HTML：
     engine.LoadHTMLGlob("./html/*")
-    ctx.HTML(http.StatusOK, "./html/index.html", nil)
+    ctx.HTML(http.StatusOK, "index.html", nil)
+
+路由分组:
+    userGroup := engine.Group("/user")
+    userGroup.GET("/login", fun(ctx *gin.Context){})
