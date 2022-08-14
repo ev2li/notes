@@ -1,0 +1,3 @@
+panic和recover的关系:
+1)有panic没recover,程序宕机
+2)有panic有recover,程序不会宕机,执行完对应的defer后,从宕机点退出当前函数后继续执行
