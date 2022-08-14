@@ -1,8 +1,7 @@
 gin框架的使用
 gin.Default()和gin.New()的区别
 gin.Default()也使用gin.New()创建engine实例,但是会默认使用Logger和Recovery中间件
-
-engin.HANDLE("GET", "/hello", func(ctx *gin.Context){    
+engin.HANDLE("GET", "/hello", func(ctx *gin.Context){
 })
 获取GET参数：
     ctx.DefaultQuery("","default value")
@@ -15,3 +14,10 @@ engin.HANDLE("GET", "/hello", func(ctx *gin.Context){
         "msg":"success",
     })
 
+数据获取：
+    GET：
+        ctx.ShouldBindQuery(&student)
+    POST:
+        ctx.ShouldBind(&student)
+    JSON:
+        ctx.BindJSON(&student)
