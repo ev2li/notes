@@ -1,0 +1,16 @@
+一：git status
+M-x magit-status进入magit mode模式(space g s)
+二：git add .
+j/k上下移动光标
+移动到unstaged文件上,按s键将其设置成staged
+或者移动到staged文件,按u键将其设置成unstaged
+如果要撤销更改，移动到staged/unstaged文件,按k键
+按tab键,就可以看到修改的地方
+
+三:git commit
+连续按两次c键
+连续按两次Ctrl+c键提交commit
+
+四：git push
+先按大P
+再按小p 
