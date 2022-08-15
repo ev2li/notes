@@ -29,3 +29,9 @@ engin.HANDLE("GET", "/hello", func(ctx *gin.Context){
 路由分组:
     userGroup := engine.Group("/user")
     userGroup.GET("/login", fun(ctx *gin.Context){})
+中间件:
+    e.Use(RequestInfos())
+    func RequestInfos() gin.HandlerFunc{}
+    ctx.Next()
+    ctx.Writer.Status()
+    
