@@ -1,0 +1,4 @@
+打开Neotree
+SPC f t
+SPC p t 
+
