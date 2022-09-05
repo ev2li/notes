@@ -1,0 +1,28 @@
+```
+#include <iostream>
+using namespace std;
+class Date
+{
+public:
+	Date(int year = 0) //单个参数的构造函数
+		:_year(year)
+	{}
+	void Print()
+	{
+		cout << _year << endl;
+	}
+private:
+	int _year;
+};
+int main()
+{
+	Date d1 = 2021; //支持该操作
+	d1.Print();
+	return 0;
+}
+```
+
+Date d1 = 2021;等价与
+Date tmp(2021); //先构造
+Date d1(tmp); //再拷贝构造
+我们若是想禁止单参数构造函数的隐式转换，可以用关键字explicit来修饰构造函数。
