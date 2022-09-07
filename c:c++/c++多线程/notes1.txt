@@ -9,3 +9,25 @@
     2.不要在构造函数中把this传给跨线程的对象
     3.即便在构造函数的最后一行也不行
 构造函数在执行期间,对象还没有完成初始化,如果this被泄漏(escape)给了其他对象(其自身创建的子对象除外)那么别的线程有可能访问这个半成品对象,这会造成难以预料的后果
+
+shared_ptr:
+    控制对象的生命周期,shared_ptr是强引用(想象成用铁丝绑住堆上对象),只要有一个指向x对象的shared_ptr存在,该x对象就不会析构,当指向对象x的最后一个shared_ptr析构或reset()的时候,x保证会被销毁
+weak_ptr:
+    不控制对象的生命周期,但是它知道对象是否还活着(想象成用棉线轻轻拴住堆上对象),如果对象还活着,那么它可以提升(promote)为有效的shared_ptr,如果对象已经死了,提升失败,返回一个空的shared_ptr,提升/lock()行为是线程安全的
+
+C++中可能出现的内存问题大致有以下几个方面:
+1.缓冲区溢出(buffer overrun)
+2.空悬指针/野指针
+3.重复释放(double delete)
+4.内存泄漏(memory leak)
+5.不配对的new[]/delete
+6.内存碎片(memory fragmentation)
+
+小结:
+    1.原始指针暴露给多个线程往往会造成race condition
+    2.统一用shared_ptr/scoped_ptr来管理对象的生命周期,在多线程中尤其重要
+
+mutex:
+    1.递归(recursive)和非递归(non-recursive)两种,唯一区别就是同一个线程,可以重复对recursive mutex加锁,但不能对non-recursive mutex加锁
+
+
